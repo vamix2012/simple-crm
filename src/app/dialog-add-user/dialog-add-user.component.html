@@ -1,0 +1,50 @@
+<div class="dialog-container">
+
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<h1 mat-dialog-title>Add User</h1>
+<div mat-dialog-content>
+     <div> 
+         <mat-form-field  class="mr-16" appearance="outline">
+        <mat-label>First name</mat-label>
+        <input [disabled]="loading" [(ngModel)]="user.firstName" matInput placeholder="Ex. John">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last name</mat-label>
+        <input [disabled]="loading" [(ngModel)]="user.lastName" matInput placeholder="Ex. Travolta">
+     </mat-form-field>
+    </div>
+     <mat-form-field class="full-width" appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input type="email" [disabled]="loading" [(ngModel)]="user.email" matInput placeholder="ex. Example@email.com">
+     </mat-form-field>
+      <div>
+           <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Birth Date</mat-label>
+       <input [disabled]="loading" [(ngModel)]="birthDate" matInput [matDatepicker]="picker">
+       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Street & House No.</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.street" matInput placeholder="Ex. Examplestreet 4">
+         </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="mr-16" appearance="outline">
+            <mat-label>Zip Code</mat-label>
+            <input type="number" [disabled]="loading" [(ngModel)]="user.zipCode" matInput placeholder="ex. 74535">
+         </mat-form-field>
+         <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input [disabled]="loading" [(ngModel)]="user.city" matInput placeholder="ex. Examplecity">
+         </mat-form-field>
+      </div> 
+     
+</div>
+<div mat-dialog-actions>
+  <button [disabled]="loading" (click)="dialogRef.close()" mat-button>Cancel</button>
+  <button [disabled]="loading"  mat-button cdkFocusInitial (click)="saveUser()">Save</button>
+</div>
+</div>
