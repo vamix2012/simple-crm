@@ -29,9 +29,4 @@ export class UserComponent implements OnInit {
   openDialog() {
     this.dialog.open(DialogAddUserComponent);
   }
-
-  // deleteUser(index) {
-  //   this.firestore
-  //   .collection('users', allUsers[index].)
-  // }
 }

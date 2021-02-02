@@ -14,6 +14,7 @@ import { DialogEditUserComponent } from '../dialog-edit-user/dialog-edit-user.co
 export class UserDetailComponent implements OnInit {
   userId = '';
   user: User = new User();
+  allTasks = [];
   constructor(
     private route: ActivatedRoute,
     private firestore: AngularFirestore,

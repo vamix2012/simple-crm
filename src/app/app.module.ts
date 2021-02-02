@@ -56,7 +56,7 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     AngularFirestoreModule,
     MatProgressBarModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
   ],
 
   providers: [],

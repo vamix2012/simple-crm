@@ -3,8 +3,8 @@
         <mat-icon>more_vert</mat-icon>
         <mat-menu #userMenu="matMenu">
             <button (click)="editUser()" mat-menu-item>Edit</button>
-            
-          </mat-menu>
+
+        </mat-menu>
     </button>
     <img src="../../assets/img/profile.png">
     <div class="user-details">
@@ -15,22 +15,29 @@
 </mat-card>
 
 <mat-card class="mt-32">
-<button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="addressMenu">
-    <mat-icon>more_vert</mat-icon>
-    <mat-menu #addressMenu="matMenu">
-        <button (click)="editAddressDialog()" mat-menu-item>Edit</button>
-        
-      </mat-menu>
-</button>
- 
+    <button mat-icon-button class="pin-right-upper-corner" [matMenuTriggerFor]="addressMenu">
+        <mat-icon>more_vert</mat-icon>
+        <mat-menu #addressMenu="matMenu">
+            <button (click)="editAddressDialog()" mat-menu-item>Edit</button>
+
+        </mat-menu>
+    </button>
+
     <mat-card-title>Address</mat-card-title>
-<address>
-      <mat-card-content>
-        {{ user.street }} <br>
-        {{ user.zipCode }} {{ user.city }}
-    </mat-card-content>
-</address>
-  
-   
+    <address>
+        <mat-card-content>
+            {{ user.street }} <br>
+            {{ user.zipCode }} {{ user.city }}
+        </mat-card-content>
+    </address>
 </mat-card>
 
+<mat-card class="mt-32">
+    <table>
+        <tr *ngFor="let task of user.tasks">
+            <td><input type="checkbox">{{ task }}</td>
+        </tr>
+
+    </table>
+
+</mat-card>
